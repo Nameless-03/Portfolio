@@ -20,12 +20,10 @@ const scrollTo = (id) => {
         </div>
         <div class="hero__visual">
           <div class="hero__graphic">
-            <div class="hero__graphic-title">Fb</div>
-            <div class="hero__graphic-bar"></div>
-            <div class="hero__graphic-bar"></div>
-            <div class="hero__graphic-bar"></div>
-            <div class="hero__graphic-bar"></div>
-            <div class="hero__graphic-bar"></div>
+            <div class="hero__huge-text">
+              <span class="letter-f">f</span>
+              <span class="letter-b">b</span>
+            </div>
           </div>
         </div>
       </div>

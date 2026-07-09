@@ -407,46 +407,25 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.hero__graphic-title {
+.hero__huge-text {
   font-family: var(--font-family-heading);
-  font-size: 2rem;
   font-weight: 800;
-  color: var(--color-text-main);
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  text-align: right;
-  letter-spacing: -1px;
+  color: var(--color-secondary);
+  text-align: center;
+  line-height: 1;
+  padding: 2rem 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  letter-spacing: -5px;
 }
 
-.hero__graphic-bar {
-  height: 40px;
-  background-color: var(--color-secondary);
-  /* Violet */
+.letter-f {
+  font-size: 14rem;
 }
 
-.hero__graphic-bar:nth-child(2) {
-  width: 40%;
-  opacity: 0.2;
-}
-
-.hero__graphic-bar:nth-child(3) {
-  width: 55%;
-  opacity: 0.4;
-}
-
-.hero__graphic-bar:nth-child(4) {
-  width: 70%;
-  opacity: 0.6;
-}
-
-.hero__graphic-bar:nth-child(5) {
-  width: 85%;
-  opacity: 0.8;
-}
-
-.hero__graphic-bar:nth-child(6) {
-  width: 100%;
-  opacity: 1;
+.letter-b {
+  font-size: 9rem;
 }
 
 .hero__cta {
