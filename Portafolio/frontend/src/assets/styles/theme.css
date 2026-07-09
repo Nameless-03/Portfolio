@@ -1,0 +1,27 @@
+/* src/assets/styles/theme.css */
+:root {
+  /* Paleta de colores - Tema Oscuro (Negro, Dorado, Violeta) */
+  --color-background: #0a0a0c; /* Negro muy oscuro */
+  --color-surface: #121216; /* Gris muy oscuro para tarjetas */
+  --color-surface-hover: #1c1c22;
+  --color-primary: #fbbf24; /* Dorado brillante */
+  --color-secondary: #8b5cf6; /* Morado/Violeta */
+  --color-text-main: #f8fafc; /* Blanco roto */
+  --color-text-muted: #94a3b8; /* Gris azulado */
+  --color-border: #fbbf2420; /* Borde muy sutil dorado */
+  
+  /* Fuentes */
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-family-heading: 'Outfit', var(--font-family-base);
+  
+  /* Espaciado */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Transiciones */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+}
