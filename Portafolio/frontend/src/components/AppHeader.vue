@@ -24,7 +24,6 @@ const handleNavClick = (id) => {
   <nav class="tab-nav">
     <div class="container tab-nav__container">
       <div class="tab-nav__mobile-header">
-        <!-- Puedes añadir un pequeño logo aquí si lo deseas en el futuro -->
         <div class="tab-nav__mobile-spacer"></div>
         <button class="tab-nav__hamburger" @click="isMenuOpen = !isMenuOpen" :class="{ 'is-open': isMenuOpen }" aria-label="Abrir menú">
           <span></span>
