@@ -18,14 +18,6 @@ const scrollTo = (id) => {
           </p>
           <a href="#contacto" @click.prevent="scrollTo('#contacto')" class="hero__cta">Trabajemos juntos</a>
         </div>
-        <div class="hero__visual">
-          <div class="hero__graphic">
-            <div class="hero__huge-text">
-              <span class="letter-f">f</span>
-              <span class="letter-b">b</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
