@@ -5,6 +5,13 @@ const scrollTo = (id) => {
     el.scrollIntoView({ behavior: 'smooth' })
   }
 }
+
+const onNameHover = () => {
+  document.body.classList.add('hero-name-hovered');
+}
+const onNameLeave = () => {
+  document.body.classList.remove('hero-name-hovered');
+}
 </script>
 
 <template>
@@ -12,7 +19,7 @@ const scrollTo = (id) => {
     <div class="container">
       <div class="hero__grid">
         <div class="hero__content">
-          <h1 class="hero__title">Hola, soy Felipe Bernardi.</h1>
+          <h1 class="hero__title">Hola, soy <span class="hero__name" @mouseenter="onNameHover" @mouseleave="onNameLeave">Felipe Bernardi</span>.</h1>
           <p class="hero__subtitle">
             Bienvenido a mi espacio.
           </p>
@@ -22,3 +29,14 @@ const scrollTo = (id) => {
     </div>
   </section>
 </template>
+
+<style scoped>
+.hero__name {
+  transition: color var(--transition-normal);
+  cursor: pointer;
+}
+
+.hero__name:hover {
+  color: var(--color-primary);
+}
+</style>

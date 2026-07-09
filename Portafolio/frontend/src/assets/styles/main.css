@@ -28,6 +28,81 @@ body {
   overflow-x: hidden;
 }
 
+/* Custom Cursor */
+* {
+  cursor: none !important; /* Ocultar el cursor nativo en toda la app */
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%); /* Centrar el cursor en las coordenadas del mouse */
+  transition: width 0.3s, height 0.3s;
+}
+
+.cursor-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.cursor-shape {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.cursor-pupil {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estado Hover (Transformación en Ojo) */
+.custom-cursor.is-hovering .cursor-shape {
+  width: 32px;
+  height: 32px;
+  border-radius: 75% 0; /* Esto, rotado, crea una forma de hoja u ojo perfecta */
+  transform: rotate(45deg);
+  background-color: rgba(251, 191, 36, 0.05); /* Relleno muy sutil dorado */
+}
+
+.custom-cursor.is-hovering .cursor-pupil {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Animación de Parpadeo (solo cuando es ojo) */
+.custom-cursor.is-hovering .cursor-wrapper {
+  animation: eyeBlink 5s infinite;
+}
+
+@keyframes eyeBlink {
+  0%, 90%, 100% {
+    transform: scaleY(1);
+  }
+  95% {
+    /* El parpadeo se simula aplastando el contenedor verticalmente */
+    transform: scaleY(0.1); 
+  }
+}
+
 /* Aurora / PS3 Fluid Wave Effect */
 .aurora-bg {
   position: fixed;
@@ -52,6 +127,12 @@ body {
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
+  transition: border-top-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+body.hero-name-hovered .aurora-blob {
+  border-top-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 -15px 40px rgba(139, 92, 246, 0.3), inset 0 10px 40px rgba(139, 92, 246, 0.1);
 }
 
 .aurora-blob-1 {
@@ -563,4 +644,96 @@ ul {
 .btn--ghost:hover {
   background-color: var(--color-secondary);
   color: #fff;
+}
+
+/* ==========================================================================
+   Modificación de color del cursor personalizado en el Navbar
+   ========================================================================== */
+.custom-cursor.is-nav-hover .cursor-shape {
+  border-color: var(--color-secondary);
+  background-color: rgba(139, 92, 246, 0.1);
+}
+
+.custom-cursor.is-nav-hover .cursor-pupil {
+  background-color: var(--color-secondary);
+}
+
+/* ==========================================================================
+   Responsive Design (Media Queries)
+   ========================================================================== */
+
+/* Dispositivos Móviles (Tablets verticales y Teléfonos) */
+@media (max-width: 768px) {
+  /* 1. Ocultar cursor personalizado y restaurar nativo en móviles */
+  * {
+    cursor: auto !important;
+  }
+  
+  .custom-cursor {
+    display: none !important;
+  }
+
+  /* 2. Reposicionar el Navbar para que quede fijo arriba */
+  .home-view {
+    /* Darle un respiro al contenido principal para que el navbar no lo pise */
+    padding-top: 70px;
+  }
+
+  .tab-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(15, 23, 42, 0.95); /* Color oscuro base con transparencia */
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .tab-nav__container {
+    padding: 0;
+  }
+
+  .tab-nav__link {
+    padding: 1rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  /* Ajustes generales de la aplicación para móviles */
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__huge-text .letter-f {
+    font-size: 8rem;
+  }
+  
+  .hero__huge-text .letter-b {
+    font-size: 5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Ajustes de Aurora / Foco en móviles para aplanar las líneas (quitar "panza") */
+  .aurora-blob-1 { width: 350vw; left: -125vw; height: 180vh; bottom: -130vh; }
+  .aurora-blob-2 { width: 400vw; left: -150vw; height: 190vh; bottom: -140vh; }
+  .aurora-blob-3 { width: 350vw; right: -125vw; height: 170vh; bottom: -120vh; }
+  .aurora-blob-4 { width: 400vw; left: -150vw; height: 200vh; bottom: -150vh; }
+
+  /* Ocultar flechas en los enlaces del navbar móvil */
+  .tab-nav__arrow {
+    display: none !important;
+  }
+}
+
+/* Detectar dispositivos táctiles explícitamente y apagar el cursor */
+@media (hover: none) and (pointer: coarse) {
+  * {
+    cursor: auto !important;
+  }
+  .custom-cursor {
+    display: none !important;
+  }
 }
