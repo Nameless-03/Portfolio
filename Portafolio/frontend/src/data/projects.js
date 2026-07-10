@@ -2,64 +2,93 @@ export const projects = [
   {
     id: 'peatoon',
     title: 'Peatoon',
-    shortDescription: 'Videojuego de gestión desarrollado en Godot.',
+    shortDescription: 'Videojuego de gestión y simulación de una peatonal urbana desarrollado con Godot Engine.',
     fullDescription: `
-Peatoon es un videojuego interactivo enfocado en mecánicas de gestión en un ambiente urbano. 
-Desarrollado completamente en Godot Engine, el juego desafía a los jugadores a gestionar 
-una peatonal con diferentes tiendas y servicios.
+Peatoon es un videojuego de gestión y simulación desarrollado en equipo con Godot Engine. Dentro del proyecto participé en la concepción de la idea principal, el diseño de las mecánicas de juego, el desarrollo de gran parte de la lógica del sistema y el diseño de la interfaz de usuario, mientras que otros integrantes del equipo se encargaron de áreas como el apartado artístico.
 
-Funcionalidades destacadas:
-· Mecánicas de construcción: Gestión de tiendas y servicios.
-· Diseño de la peatonal: Insta al jugador a ser creativo y construir decoraciónes para mejorar asi la reputación.
-· Arte y Animación: Entornos pixel art hechos a mano con un estilo  caricaturezca .
+El objetivo del juego es poner al jugador en el rol de administrador de una peatonal urbana, donde deberá construir comercios, gestionar recursos y tomar decisiones estratégicas para hacer crecer la ciudad manteniendo un equilibrio entre la rentabilidad y la satisfacción de los ciudadanos.
+
+Más que un simulador de construcción, el desafío del proyecto fue diseñar sistemas capaces de interactuar entre sí, logrando que cada decisión del jugador impacte directamente en la economía, la reputación y el comportamiento dinámico de la ciudad.
+
+Características principales
+
+* Sistema de gestión económica. El jugador administra ingresos, gastos, alquileres, mejoras y expansiones, debiendo mantener un equilibrio financiero para evitar la quiebra mientras continúa haciendo crecer la peatonal.
+* Simulación dinámica. Los peatones reaccionan a distintos factores del entorno, como la reputación del lugar, las estaciones del año, el clima y las tendencias del mercado, generando una experiencia diferente en cada partida.
+* Eventos y toma de decisiones. El juego incorpora temporadas, cambios climáticos, misiones y eventos aleatorios que modifican el comportamiento de los comercios y obligan al jugador a adaptar constantemente su estrategia.
+* Progresión del jugador. A medida que se obtienen experiencia y reputación, se desbloquean nuevos edificios, mecánicas y expansiones del mapa, incentivando el crecimiento continuo de la ciudad.
+* Interfaz pensada para la gestión. El proyecto incorpora paneles informativos, tutorial interactivo, controles de simulación, indicadores visuales y notificaciones que permiten administrar grandes cantidades de información de manera clara e intuitiva.
+* Experiencia rejugable. Gracias a la combinación de eventos aleatorios, tendencias comerciales, ciclos estacionales y decisiones del jugador, cada partida evoluciona de manera distinta, fomentando la experimentación y la planificación estratégica.
+
+Valor aportado
+
+Este proyecto refleja mi capacidad para transformar una idea en un sistema de juego completo, participando desde el diseño conceptual hasta la implementación de gran parte de su lógica. El desarrollo requirió diseñar mecánicas que interactúan entre sí de manera coherente, equilibrar sistemas económicos y de progresión, y construir una interfaz que permitiera al jugador gestionar gran cantidad de información de forma clara e intuitiva.
+
+Además de reforzar mis conocimientos en desarrollo con Godot, el proyecto me permitió adquirir experiencia en trabajo colaborativo, planificación de funcionalidades y diseño de experiencias centradas en el jugador.
     `,
-    tags: ['GDScript', 'Game Design'],
+    tags: ['Godot Engine', 'GDScript', 'Game Design', 'UI/UX', 'Simulación'],
     github: null, // Repositorio privado
     images: [
-      'https://via.placeholder.com/800x450/1a1a24/fbbf24?text=Peatoon+Gameplay+1',
-      'https://via.placeholder.com/800x450/1a1a24/8b5cf6?text=Peatoon+Level+Design'
+      '/img/proyectos/peatoon-1.jpg',
+      '/img/proyectos/peatoon-2.jpg'
     ]
   },
   {
     id: 'php-app',
-    title: 'App de Videollamadas',
-    shortDescription: 'Proyecto universitario (UTEC) para gestión de videollamadas.',
+    title: 'Asesorías y Videollamadas',
+    shortDescription: 'Plataforma web para gestionar reservas y videollamadas, desarrollada con Laravel y Vue 3.',
     fullDescription: `
-Plataforma web diseñada para facilitar la comunicación a través de videollamadas. 
-Este proyecto fue desarrollado como parte de mi formación en la UTEC, utilizando PHP 
-para la gestión del backend y Vue.js en el frontend para una experiencia de usuario reactiva.
+Esta plataforma web fue desarrollada en equipo como parte de mi formación en la UTEC, participando activamente tanto en el desarrollo del frontend como del backend, con una mayor dedicación al diseño e implementación de la interfaz de usuario.
 
-Funcionalidades destacadas:
-· Autenticación segura: Gestión completa de usuarios y roles.
-· Salas virtuales: Creación y administración de salas de videollamada.
-· Interfaz moderna: Diseño intuitivo construido con Vue.js.
+El objetivo del proyecto fue digitalizar por completo el proceso de gestión de asesorías profesionales, permitiendo administrar reservas, agendas, pagos y videollamadas desde una única plataforma, simplificando tanto el trabajo de los profesionales como la experiencia de sus clientes.
+
+Características principales
+
+* Gestión completa de usuarios y perfiles. La plataforma cuenta con diferentes tipos de usuarios (administradores, profesionales y clientes), cada uno con funcionalidades y permisos adaptados a su rol.
+* Sistema inteligente de reservas. Los profesionales pueden configurar sus horarios de atención y registrar excepciones como vacaciones o días libres. El sistema calcula automáticamente la disponibilidad en tiempo real, evitando conflictos entre reservas y garantizando que solo se ofrezcan horarios realmente disponibles.
+* Videollamadas integradas. Cada reserva genera una sala privada y segura para realizar la sesión de forma virtual, permitiendo que únicamente el profesional y el cliente involucrados puedan acceder.
+* Gestión de servicios y paquetes. Los clientes pueden contratar sesiones individuales o adquirir paquetes de asesorías, mientras que la plataforma administra el estado de los pagos antes de habilitar cada encuentro.
+* Notificaciones automáticas. El sistema informa a los usuarios sobre confirmaciones, cambios de estado y recordatorios de sus sesiones, mejorando la organización y la comunicación.
+* Procesamiento optimizado. Las tareas de mayor carga, como el envío de correos electrónicos, se ejecutan en segundo plano para mantener tiempos de respuesta rápidos y una experiencia de uso fluida.
+* Sistema de calificaciones. Al finalizar cada asesoría, los clientes pueden valorar el servicio recibido, promoviendo la transparencia y la mejora continua dentro de la plataforma.
+* Arquitectura preparada para crecer. La aplicación fue diseñada siguiendo buenas prácticas de ingeniería de software, facilitando su mantenimiento, incorporación de nuevas funcionalidades y escalabilidad.
+
+Valor aportado
+
+Este proyecto refleja mi experiencia en el desarrollo de aplicaciones web de negocio con procesos complejos, donde fue necesario integrar múltiples servicios, automatizar flujos de trabajo y construir una solución capaz de resolver necesidades reales de gestión. Además del desarrollo técnico, el enfoque estuvo puesto en crear una plataforma intuitiva, segura y preparada para evolucionar conforme crezcan las necesidades de sus usuarios.
     `,
-    tags: ['PHP', 'Vue.js', 'PostgreSQL'],
+    tags: ['Laravel', 'Vue 3', 'MySQL', 'LiveKit', 'WebRTC'],
     github: 'https://github.com/Nameless-03/PHP_APP',
     images: [
-      'https://via.placeholder.com/800x450/1a1a24/fbbf24?text=Login+%26+Dashboard',
-      'https://via.placeholder.com/800x450/1a1a24/8b5cf6?text=Sala+de+Videollamada'
+      '/img/proyectos/videollamada-1.jpg',
+      '/img/proyectos/videollamada-2.jpg'
     ]
   },
   {
     id: 'proyecto-ria',
-    title: 'Exploración Multimedia',
-    shortDescription: 'Página web interactiva sobre videojuegos (Rich Internet Application).',
+    title: 'LittleBox Games',
+    shortDescription: 'Plataforma web interactiva (SPA) para la exploración y descubrimiento de videojuegos.',
     fullDescription: `
-Proyecto centrado en crear una experiencia web interactiva sobre la industria de los videojuegos. 
-Utiliza JavaScript moderno para manejar el DOM, animaciones complejas y carga de 
-contenido multimedia de manera dinámica sin recargar la página.
+LittleBox Games es una plataforma web interactiva para la exploración y descubrimiento de videojuegos, desarrollada como una aplicación de una sola página (SPA). El proyecto nació con el objetivo de ofrecer una experiencia rápida, intuitiva y confiable, incluso frente a problemas comunes como la caída de servicios externos o la pérdida de conexión a Internet.
 
-Funcionalidades destacadas:
-· Navegación dinámica: Carga de contenido multimedia de forma asíncrona.
-· Animaciones fluidas: Uso intensivo de CSS y JS para microinteracciones.
-· Diseño Responsivo: Adaptabilidad total a dispositivos móviles.
+Más allá de presentar un catálogo de videojuegos, el desafío consistió en desarrollar una aplicación capaz de adaptarse a distintos escenarios sin comprometer la experiencia del usuario.
+
+Características principales
+* Experiencia continua y funcionamiento sin conexión. La aplicación utiliza múltiples fuentes de información y un sistema de almacenamiento local para mantener el contenido disponible incluso cuando un servicio externo deja de responder o el usuario pierde la conexión a Internet.
+* Catálogo optimizado para grandes volúmenes de contenido. Los videojuegos se cargan progresivamente a medida que el usuario navega, reduciendo los tiempos de espera y ofreciendo una experiencia fluida sin sobrecargar el navegador.
+* Contenido dinámico y descubrimiento de nuevos juegos. Las secciones de recomendaciones se actualizan automáticamente en cada visita, mostrando diferentes videojuegos y haciendo que la experiencia sea siempre distinta para el usuario.
+* Experiencia personalizada. Los usuarios pueden guardar favoritos, gestionar un carrito, aplicar filtros y conservar sus preferencias entre distintas sesiones, permitiendo que la plataforma se adapte a cada persona.
+* Interfaz moderna y adaptable. Toda la interfaz fue desarrollada desde cero e incorpora soporte para modo claro y modo oscuro, con un cambio instantáneo entre ambos.
+* Estadísticas personalizadas. A partir de los videojuegos favoritos, la plataforma analiza las preferencias del usuario y genera gráficos interactivos que permiten visualizar sus géneros favoritos de forma clara e intuitiva.
+
+Valor aportado
+
+Este proyecto demuestra mi capacidad para desarrollar aplicaciones web modernas enfocadas en la experiencia del usuario, priorizando el rendimiento, la disponibilidad y la capacidad de adaptarse a distintos escenarios de uso. Más allá del diseño de la interfaz, el objetivo fue resolver problemas reales como la tolerancia a fallos, la optimización de carga y la personalización del contenido.
     `,
-    tags: ['JavaScript', 'Vue.js', 'CSS3'],
+    tags: ['Vue 3', 'Pinia', 'CSS3'],
     github: 'https://github.com/Nameless-03/Proyecto_RIA',
     images: [
-      'https://via.placeholder.com/800x450/1a1a24/fbbf24?text=Landing+Page+Interactiva',
-      'https://via.placeholder.com/800x450/1a1a24/8b5cf6?text=Galer%C3%ADa+Multimedia'
+      '/img/proyectos/littlebox-1.jpg',
+      '/img/proyectos/littlebox-2.jpg'
     ]
   }
 ];
