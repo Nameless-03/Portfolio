@@ -11,7 +11,7 @@ const project = computed(() => {
 })
 
 const goBack = () => {
-  router.push('/#proyectos')
+  router.push('/')
 }
 
 // Analizador inteligente de texto para categorizar en bloques
