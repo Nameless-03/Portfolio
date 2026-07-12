@@ -1,7 +1,9 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const isMenuOpen = ref(false)
+const activeSection = ref('')
+let observer = null
 
 const scrollTo = (id) => {
   const el = document.querySelector(id)
@@ -12,12 +14,43 @@ const scrollTo = (id) => {
 
 const handleNavClick = (id) => {
   scrollTo(id)
-  // Añadir un pequeño retraso (150ms) antes de cerrar para que la transición
-  // y la sensación del click se sientan mucho más orgánicas.
   setTimeout(() => {
     isMenuOpen.value = false
   }, 150)
 }
+
+onMounted(() => {
+  // Configurar el IntersectionObserver para actualizar el hash y la clase activa
+  const options = {
+    root: null,
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+  }
+
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        activeSection.value = entry.target.id
+        // Actualizar la URL sin saltos bruscos y sin agregar al historial
+        if (history.replaceState) {
+          history.replaceState(null, null, '#' + entry.target.id)
+        }
+      }
+    })
+  }, options)
+
+  // Observar todas las secciones
+  setTimeout(() => {
+    const sections = document.querySelectorAll('section[id]')
+    sections.forEach(section => observer.observe(section))
+  }, 100) // Pequeño retraso para asegurar que el DOM esté listo
+})
+
+onUnmounted(() => {
+  if (observer) {
+    observer.disconnect()
+  }
+})
 </script>
 
 <template>
@@ -33,10 +66,10 @@ const handleNavClick = (id) => {
       </div>
       
       <div class="tab-nav__links" :class="{ 'is-open': isMenuOpen }">
-        <a href="#sobre-mi" @click.prevent="handleNavClick('#sobre-mi')" class="tab-nav__link">Sobre Mí <span class="tab-nav__arrow">&darr;</span></a>
-        <a href="#skills" @click.prevent="handleNavClick('#skills')" class="tab-nav__link">Skills <span class="tab-nav__arrow">&darr;</span></a>
-        <a href="#proyectos" @click.prevent="handleNavClick('#proyectos')" class="tab-nav__link">Proyectos <span class="tab-nav__arrow">&darr;</span></a>
-        <a href="#contacto" @click.prevent="handleNavClick('#contacto')" class="tab-nav__link">Contacto <span class="tab-nav__arrow">&darr;</span></a>
+        <a @click.prevent="handleNavClick('#sobre-mi')" class="tab-nav__link" :class="{ 'tab-nav__link--active': activeSection === 'sobre-mi' }">Sobre Mí <span class="tab-nav__arrow">&darr;</span></a>
+        <a @click.prevent="handleNavClick('#skills')" class="tab-nav__link" :class="{ 'tab-nav__link--active': activeSection === 'skills' }">Skills <span class="tab-nav__arrow">&darr;</span></a>
+        <a @click.prevent="handleNavClick('#proyectos')" class="tab-nav__link" :class="{ 'tab-nav__link--active': activeSection === 'proyectos' }">Proyectos <span class="tab-nav__arrow">&darr;</span></a>
+        <a @click.prevent="handleNavClick('#contacto')" class="tab-nav__link" :class="{ 'tab-nav__link--active': activeSection === 'contacto' }">Contacto <span class="tab-nav__arrow">&darr;</span></a>
       </div>
     </div>
   </nav>
@@ -45,6 +78,10 @@ const handleNavClick = (id) => {
 <style scoped>
 .tab-nav__mobile-header {
   display: none;
+}
+
+.tab-nav__link {
+  cursor: pointer;
 }
 
 .tab-nav__links {
@@ -117,6 +154,7 @@ const handleNavClick = (id) => {
     width: 100%;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
+    cursor: pointer;
   }
 }
 </style>
