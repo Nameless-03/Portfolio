@@ -6,7 +6,7 @@ export const projects = [
     fullDescription: `
 Peatoon es un videojuego de gestión y simulación desarrollado en equipo con Godot Engine. Dentro del proyecto participé en la concepción de la idea principal, el diseño de las mecánicas de juego, el desarrollo de gran parte de la lógica del sistema y el diseño de la interfaz de usuario, mientras que otros integrantes del equipo se encargaron de áreas como el apartado artístico.
 
-El objetivo del juego es poner al jugador en el rol de administrador de una peatonal urbana, donde deberá construir comercios, gestionar recursos y tomar decisiones estratégicas para hacer crecer la ciudad manteniendo un equilibrio entre la rentabilidad y la satisfacción de los ciudadanos.
+El objetivo del juego es poner al jugador en el rol de administrador de una peatonal urbana, donde deberá construir comercios, gestionar recursos y tomar decisiones estratégicas para hacer crecer la misma, manteniendo un equilibrio entre la rentabilidad y la satisfacción de los ciudadanos.
 
 Más que un simulador de construcción, el desafío del proyecto fue diseñar sistemas capaces de interactuar entre sí, logrando que cada decisión del jugador impacte directamente en la economía, la reputación y el comportamiento dinámico de la ciudad.
 
@@ -25,11 +25,12 @@ Este proyecto refleja mi capacidad para transformar una idea en un sistema de ju
 
 Además de reforzar mis conocimientos en desarrollo con Godot, el proyecto me permitió adquirir experiencia en trabajo colaborativo, planificación de funcionalidades y diseño de experiencias centradas en el jugador.
     `,
-    tags: ['Godot Engine', 'GDScript', 'Game Design', 'UI/UX', 'Simulación'],
+    tags: ['Godot Engine', 'Game Design'],
     github: null, // Repositorio privado
     images: [
-      '/img/proyectos/peatoon-1.jpg',
-      '/img/proyectos/peatoon-2.jpg'
+      '/img/proyectos/PeatoonDia.png',
+      '/img/proyectos/PeatoonNoche.png',
+      '/img/proyectos/PeatoonUI.png'
     ]
   },
   {
@@ -56,7 +57,7 @@ Valor aportado
 
 Este proyecto refleja mi experiencia en el desarrollo de aplicaciones web de negocio con procesos complejos, donde fue necesario integrar múltiples servicios, automatizar flujos de trabajo y construir una solución capaz de resolver necesidades reales de gestión. Además del desarrollo técnico, el enfoque estuvo puesto en crear una plataforma intuitiva, segura y preparada para evolucionar conforme crezcan las necesidades de sus usuarios.
     `,
-    tags: ['Laravel', 'Vue 3', 'MySQL', 'LiveKit', 'WebRTC'],
+    tags: ['Laravel', 'Vue 3', 'PostgreSQL', 'LiveKit'],
     github: 'https://github.com/Nameless-03/PHP_APP',
     images: [
       '/img/proyectos/videollamada-1.jpg',
@@ -87,8 +88,55 @@ Este proyecto demuestra mi capacidad para desarrollar aplicaciones web modernas 
     tags: ['Vue 3', 'Pinia', 'CSS3'],
     github: 'https://github.com/Nameless-03/Proyecto_RIA',
     images: [
-      '/img/proyectos/littlebox-1.jpg',
-      '/img/proyectos/littlebox-2.jpg'
+      '/img/proyectos/LittleBoxInicio.png',
+      '/img/proyectos/LittleBoxCatalogo.png',
+      '/img/proyectos/LittleBoxFavoritos.png'
     ]
+  },
+  {
+    id: 'chat-empresarial',
+    title: 'Chat Empresarial',
+    shortDescription: 'Plataforma de comunicación orientada a empresas.',
+    fullDescription: `
+Este proyecto es una aplicación de chat diseñada para entornos corporativos. Próximamente se agregará más información sobre las características, el diseño del sistema y el valor aportado.
+    `,
+    tags: ['Java', 'Vue', 'PostgreSQL', 'CSS3', 'JavaScript', 'WebSockets'],
+    github: null,
+    images: []
+  },
+  {
+    id: 'sociedad-fomento',
+    title: 'Sociedad de Fomento',
+    theme: 'client',
+    shortDescription: 'Página web institucional desarrollada para la sociedad de fomento de colonia suiza.',
+    fullDescription: `
+Desarrollo de un sitio web institucional para la Sociedad de Fomento Rural de Colonia Suiza, una institución uruguaya con más de 110 años de trayectoria dedicada al apoyo y desarrollo del sector agropecuario. El proyecto tuvo como objetivo modernizar su presencia digital, facilitando el acceso a la información y fortaleciendo la comunicación con socios, productores y clientes.
+
+Características principales
+
+* Renovación de la identidad digital. Se desarrolló una interfaz moderna y accesible que refleja la trayectoria y los valores de la institución, manteniendo una navegación clara para todo tipo de usuarios.
+* Organización eficiente del contenido. Se estructuró la información institucional, los servicios, la historia, el equipo de trabajo y los distintos canales de contacto para facilitar el acceso a la información más relevante.
+* Diseño adaptable. El sitio fue desarrollado con un enfoque responsive, garantizando una experiencia consistente tanto en computadoras como en dispositivos móviles.
+* Comunicación más cercana con los usuarios. Se incorporaron formularios de contacto, integración con WhatsApp, mapas interactivos y enlaces a redes sociales, facilitando el vínculo entre la institución y la comunidad.
+
+Valor aportado
+
+Este proyecto refleja mi capacidad para desarrollar soluciones web orientadas a organizaciones reales, comprendiendo sus necesidades y transformándolas en una plataforma moderna, funcional y fácil de administrar. Más allá del desarrollo técnico, el enfoque estuvo puesto en crear una presencia digital que transmitiera la identidad de la institución y mejorara la comunicación con su comunidad.
+    `,
+    tags: ['HTML5', 'CSS3', 'JavaScript'],
+    github: null,
+    website: 'https://www.fomentocoloniasuiza.com.uy/',
+    images: []
+  },
+  {
+    id: 'glow-pong',
+    title: 'Glow Pong',
+    shortDescription: 'Una versión mejorada del clásico Pong con modificaciones visuales y jugables.',
+    fullDescription: `
+Glow Pong es una recreación del clásico juego arcade con modificaciones propias. Próximamente se agregará más información sobre las mecánicas introducidas y el proceso de desarrollo.
+    `,
+    tags: ['Próximamente', 'Videojuego'],
+    github: null,
+    images: []
   }
 ];

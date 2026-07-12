@@ -7,7 +7,7 @@ import { projects } from '../../data/projects'
     <div class="container">
       <h2 class="section__title">Proyectos</h2>
       <div class="projects__grid">
-        <article v-for="project in projects" :key="project.id" class="card project-card">
+        <article v-for="project in projects" :key="project.id" :class="['card project-card', project.theme === 'client' ? 'theme-client' : '']">
           <h3 class="card__title">{{ project.title }}</h3>
           
           <div class="project-tags">
@@ -26,6 +26,15 @@ import { projects } from '../../data/projects'
                 <path d="M12.545.5c-6.356 0-11.478 5.188-11.478 11.545 0 5.098 3.322 9.42 7.94 10.947.574.106.786-.25.786-.554 0-.273-.01-1.18-.016-2.146-3.193.694-3.866-1.353-3.866-1.353-.522-1.326-1.275-1.68-1.275-1.68-1.04-.712.079-.697.079-.697 1.15.08 1.756 1.18 1.756 1.18 1.022 1.753 2.68 1.246 3.332.953.104-.74.4-1.246.726-1.533-2.548-.29-5.225-1.274-5.225-5.666 0-1.25.446-2.274 1.178-3.076-.118-.29-.512-1.455.112-3.033 0 0 .963-.308 3.15 1.173a10.96 10.96 0 0 1 2.868-.386c.973.005 1.953.13 2.87.387 2.186-1.482 3.148-1.173 3.148-1.173.626 1.578.232 2.743.114 3.033.734.802 1.176 1.826 1.176 3.076 0 4.403-2.682 5.373-5.238 5.657.41.354.778 1.053.778 2.124 0 1.533-.014 2.766-.014 3.14 0 .307.21.666.793.553C20.18 21.46 23.5 17.142 23.5 12.045 23.5 5.688 18.334.5 11.978.5"></path>
               </svg>
               GitHub
+            </a>
+
+            <a v-if="project.website" :href="project.website" target="_blank" rel="noopener" class="btn btn--outline website-btn">
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+              Visitar
             </a>
           </div>
         </article>
@@ -61,6 +70,17 @@ import { projects } from '../../data/projects'
   font-size: 0.75rem;
   font-weight: 500;
   border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.theme-client .tag {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: var(--color-secondary);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.theme-client:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(139, 92, 246, 0.2);
 }
 
 .project-desc {

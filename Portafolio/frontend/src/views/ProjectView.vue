@@ -95,7 +95,7 @@ const formatParagraph = (text, title) => {
 </script>
 
 <template>
-  <div class="project-view" v-if="project">
+  <div :class="['project-view', project && project.theme === 'client' ? 'theme-client' : '']" v-if="project">
     <div class="container">
       <button @click="goBack" class="btn btn--outline back-btn">
         <span class="back-icon">←</span> Volver
@@ -120,9 +120,9 @@ const formatParagraph = (text, title) => {
         </div>
 
         <!-- Panel 2: Galería (Izquierda) y Características (Derecha) -->
-        <div class="panel-middle-split">
+        <div :class="['panel-middle-split', (!project.images || project.images.length === 0) ? 'no-gallery' : '']">
           <!-- Galería a la izquierda -->
-          <div class="project-gallery">
+          <div v-if="project.images && project.images.length > 0" class="project-gallery">
             <img v-for="(img, index) in project.images" :key="'img-'+index" :src="img" :alt="`${project.title} screenshot ${index + 1}`" class="project-image" />
           </div>
           
@@ -151,12 +151,21 @@ const formatParagraph = (text, title) => {
               <p v-else-if="block.type === 'paragraph'" class="desc-paragraph" v-html="formatParagraph(block.content, project.title)"></p>
             </template>
             
-            <div v-if="project.github" class="project-actions">
-              <a :href="project.github" target="_blank" rel="noopener" class="btn btn--outline github-btn">
+            <div v-if="project.github || project.website" class="project-actions">
+              <a v-if="project.github" :href="project.github" target="_blank" rel="noopener" class="btn btn--outline github-btn">
                 <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
                   <path d="M12.545.5c-6.356 0-11.478 5.188-11.478 11.545 0 5.098 3.322 9.42 7.94 10.947.574.106.786-.25.786-.554 0-.273-.01-1.18-.016-2.146-3.193.694-3.866-1.353-3.866-1.353-.522-1.326-1.275-1.68-1.275-1.68-1.04-.712.079-.697.079-.697 1.15.08 1.756 1.18 1.756 1.18 1.022 1.753 2.68 1.246 3.332.953.104-.74.4-1.246.726-1.533-2.548-.29-5.225-1.274-5.225-5.666 0-1.25.446-2.274 1.178-3.076-.118-.29-.512-1.455.112-3.033 0 0 .963-.308 3.15 1.173a10.96 10.96 0 0 1 2.868-.386c.973.005 1.953.13 2.87.387 2.186-1.482 3.148-1.173 3.148-1.173.626 1.578.232 2.743.114 3.033.734.802 1.176 1.826 1.176 3.076 0 4.403-2.682 5.373-5.238 5.657.41.354.778 1.053.778 2.124 0 1.533-.014 2.766-.014 3.14 0 .307.21.666.793.553C20.18 21.46 23.5 17.142 23.5 12.045 23.5 5.688 18.334.5 11.978.5"></path>
                 </svg>
                 Repositorio de GitHub
+              </a>
+              
+              <a v-if="project.website" :href="project.website" target="_blank" rel="noopener" class="btn btn--outline website-btn">
+                <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                Visitar el sitio web
               </a>
             </div>
           </div>
@@ -248,6 +257,9 @@ const formatParagraph = (text, title) => {
 @media (min-width: 992px) {
   .panel-middle-split {
     grid-template-columns: 1fr 1.2fr;
+  }
+  .panel-middle-split.no-gallery {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -365,5 +377,18 @@ const formatParagraph = (text, title) => {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* --- Theme Client (Morado en lugar de Dorado) --- */
+.theme-client .project-title {
+  background: linear-gradient(to right, #a78bfa, var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.theme-client .tag {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: var(--color-secondary);
+  border-color: rgba(139, 92, 246, 0.2);
 }
 </style>
