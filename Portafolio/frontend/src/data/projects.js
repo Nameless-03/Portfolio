@@ -96,13 +96,33 @@ Este proyecto demuestra mi capacidad para desarrollar aplicaciones web modernas 
   {
     id: 'chat-empresarial',
     title: 'Chat Empresarial',
-    shortDescription: 'Plataforma de comunicación orientada a empresas.',
+    shortDescription: 'Plataforma web de comunicación diseñada para mejorar la colaboración entre equipos de trabajo.',
     fullDescription: `
-Este proyecto es una aplicación de chat diseñada para entornos corporativos. Próximamente se agregará más información sobre las características, el diseño del sistema y el valor aportado.
+Chat Empresarial es una plataforma web de comunicación diseñada para mejorar la colaboración entre equipos de trabajo dentro de una organización. El proyecto busca centralizar la comunicación diaria en un único espacio, permitiendo intercambiar mensajes en tiempo real, compartir tareas, organizar conversaciones y mantener informados a todos los integrantes de un equipo de manera simple e intuitiva.
+
+La aplicación fue desarrollada siguiendo una arquitectura organizada en múltiples capas, separando la lógica del sistema de la interfaz de usuario para mantener un código ordenado y facilitar su evolución.
+
+Características principales
+
+* Mensajería en tiempo real. Los usuarios pueden comunicarse de forma instantánea mediante conversaciones individuales o grupales, permitiendo una comunicación rápida y fluida sin necesidad de actualizar la página.
+* Gestión de tareas colaborativas. La plataforma incorpora un sistema de tareas que permite crear asignaciones personales o distribuirlas entre los integrantes de un grupo, facilitando el seguimiento de actividades y la organización del trabajo.
+* Canales de comunicación. Además de los chats tradicionales, el sistema dispone de canales donde únicamente los administradores pueden publicar información, ideales para compartir anuncios, novedades o comunicados importantes con todo el equipo.
+* Organización inteligente de conversaciones. Los usuarios pueden agrupar chats y grupos mediante etiquetas personalizadas, permitiendo organizar las conversaciones por áreas, proyectos o departamentos y acceder rápidamente únicamente a la información relevante.
+* Mensajes destacados. La aplicación permite resaltar mensajes utilizando distintos colores para facilitar la identificación de información importante dentro de una conversación.
+* Administración de grupos. Los grupos cuentan con diferentes roles de usuario, permitiendo gestionar participantes y mantener organizada la comunicación entre los miembros.
+* Interfaz moderna y reactiva. Desarrollada como una aplicación de una sola página (SPA), ofrece una experiencia de navegación rápida e intuitiva, priorizando la comodidad del usuario durante el uso diario.
+
+Valor aportado
+
+Este proyecto demuestra mi capacidad para desarrollar aplicaciones enfocadas en resolver necesidades reales de comunicación y organización dentro de un entorno de trabajo. Más allá de la implementación técnica, el desafío consistió en diseñar una herramienta que reuniera distintas formas de colaboración (como mensajería instantánea, gestión de tareas, canales informativos y organización de conversaciones) en una única plataforma, buscando ofrecer una experiencia clara, ordenada y fácil de utilizar.
     `,
-    tags: ['Java', 'Vue', 'PostgreSQL', 'CSS3', 'JavaScript', 'WebSockets'],
+    tags: ['Java', 'Vue', 'PostgreSQL', 'CSS3', 'JavaScript', 'WebSockets', 'REST API'],
     github: null,
-    images: []
+    images: [
+      '/img/proyectos/JavaClaro.png',
+      '/img/proyectos/JavaOscuro.png',
+      '/img/proyectos/JavaProyecto.png'
+    ]
   },
   {
     id: 'sociedad-fomento',
